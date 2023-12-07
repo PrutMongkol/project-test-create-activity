@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- daisyUI CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .icon {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24;
+            
+            color: oklch(var(--b3));
+        }
+
+        .icon:hover,
+        .radio-label:hover {
+            cursor: pointer;
+        }
+
+        input:checked ~ .icon {
+            color: oklch(var(--bc));
+        }
+    </style>
+
+    <!-- Google Fonts Icon -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <title>Create Activity</title>
+</head>
+
+<body class="container mx-auto px-4">
+    <header>
+        <div class="navbar bg-base-100 border-b-2 border-black">
+            <div class="flex-1">
+                <h1 class="text-3xl">Create Activity</h1>
+            </div>
+            <div class="flex-none">
+            <button class="btn btn-square btn-ghost">
+                <span class="material-symbols-outlined">
+                    menu
+                </span>
+            </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h2 class="text-xl my-1">Activity Title</h2>
+        <input type="text" placeholder="Exercise" class="input input-bordered w-full lg:w-[30vw]" aria-label="Activity Title" />
+
+        <h2 class="text-xl my-1">Description</h2>
+        <textarea class="textarea textarea-bordered resize-none w-full lg:w-[30vw]" placeholder="Notes for anything"></textarea>
+
+        <h2 class="text-xl my-1">Activity Type</h2>
+        
+        <div class="flex justify-around gap-1.5 lg:max-w-[30vw]">
+            <label class="flex flex-col items-center">
+                <input type="radio" name="activityType" class="radio hidden" checked aria-label="Running"/>
+                <span class="material-symbols-outlined icon">
+                    sprint
+                </span>
+                <span class="radio-label text-xs">Running</span>
+            </label>
+            
+            <label class="flex flex-col items-center">
+                <input type="radio" name="activityType" class="radio hidden" aria-label="Cycling" />
+                <span class="material-symbols-outlined icon">
+                    directions_bike
+                </span>
+                <span class="radio-label text-xs">Cycling</span>
+            </label>
+            
+            <label class="flex flex-col items-center">
+                <input type="radio" name="activityType" class="radio hidden" aria-label="Swimming" />
+                <span class="material-symbols-outlined icon">
+                    pool
+                </span>
+                <span class="radio-label text-xs">Swimming</span>
+            </label>
+    
+            <label class="flex flex-col items-center">
+                <input type="radio" name="activityType" class="radio hidden" aria-label="Walking" />
+                <span class="material-symbols-outlined icon">
+                    directions_walk
+                </span>
+                <span class="radio-label text-xs">Walking</span>
+            </label>
+    
+            <label class="flex flex-col items-center">
+                <input type="radio" name="activityType" class="radio hidden" aria-label="Hiking" />
+                <span class="material-symbols-outlined icon">
+                    hiking
+                </span>
+                <span class="radio-label text-xs">Hiking</span>
+            </label>
+    
+            <label class="flex flex-col items-center">
+                <input type="radio" name="activityType" class="radio hidden" aria-label="Other "/>
+                <span class="material-symbols-outlined icon">
+                    timer
+                </span>
+                <span class="radio-label text-xs">Other</span>
+            </label>
+        </div>
+
+        <div class="flex gap-3 justify-around items-center lg:max-w-[30vw]">
+            <div class="flex flex-col items-center">
+                <h2 class="text-xl my-1">Start time</h2>
+                <input type="time" aria-label="Start time" />
+            </div>
+            
+            <span>to</span>
+    
+            <div class="flex flex-col items-center">
+                <h2 class="text-xl my-1">End time</h2>
+                <input type="time" aria-label="End time" />
+            </div>
+        </div>
+
+        <div class="flex gap-2">
+            <h2 class="text-xl my-1">Date:</h2>
+            <input type="date" aria-label="Date" />
+        </div>
+
+        <h2 class="text-xl my-1">How did you feel?</h2>
+        <div class="flex justify-around gap-1.5 lg:max-w-[30vw]">
+            <label class="flex flex-col items-center">
+                <input type="radio" name="barometer" class="radio hidden" aria-label="Exhausted" />
+                <span class="material-symbols-outlined icon" >
+                    sentiment_very_dissatisfied
+                </span>
+                <span class="radio-label text-xs">Exhausted</span>
+            </label>
+    
+            <label class="flex flex-col items-center">
+                <input type="radio" name="barometer" class="radio hidden" aria-label="Tired" />
+                <span class="material-symbols-outlined icon">
+                    sentiment_stressed
+                </span>
+                <span class="radio-label text-xs">Tired</span>
+            </label>
+    
+            <label class="flex flex-col items-center">
+                <input type="radio" name="barometer" class="radio hidden" checked aria-label="Okay" />
+                <span class="material-symbols-outlined icon">
+                    sentiment_neutral
+                </span>
+                <span class="radio-label text-xs">Okay</span>
+            </label>
+    
+            <label class="flex flex-col items-center">
+                <input type="radio" name="barometer" class="radio hidden" aria-label="Fresh" />
+                <span class="material-symbols-outlined icon">
+                    sentiment_content
+                </span>
+                <span class="radio-label text-xs">Fresh</span>
+            </label>
+    
+            <label class="flex flex-col items-center">
+                <input type="radio" name="barometer" class="radio hidden" aria-label="Energized" />
+                <span class="material-symbols-outlined icon">
+                    sentiment_very_satisfied
+                </span>
+                <span class="radio-label text-xs">Energized</span>
+            </label>
+        </div>
+
+        <div class="flex justify-end gap-2 py-2 lg:max-w-[30vw]">
+            <button class="btn ">Cancel</button>
+            <button class="btn btn-primary">Save</button>
+        </div>
+    </main>
+
+</body>
+</html>
